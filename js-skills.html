@@ -127,7 +127,7 @@
   var helloText = document.getElementById("message-to-change");
 
   function changeTextOnClick(){
-    helloText.innerHTML = "Goodbye";
+    helloText.innerText = "Goodbye";
   }
 
   helloGoodbyeButton.addEventListener('click', changeTextOnClick);
@@ -204,22 +204,32 @@
 <script>
   "use strict";
 
-//  Here's a stub of a function you can use!
+//function that will reverse the string from the variable msg
 
-//  function reverseString() {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+function reverseString() {
+  var msg = "Porcupines are cute";
 
-// Here's a stub of event stuff you could use
-//
+   // empty string to hold our new string
+  var newMsg = "";
 
-//  var button = document.getElementById('reverse-string-button');
-//  button.addEventListener('click', reverseString);
+  //for loop that returns each letter in string, reversed
+  for (var i = msg.length - 1; i >= 0; i--) {
+    newMsg += msg[i];
+   }
+
+   //returns new string
+   alert(newMsg);
+ }
+
+// adds event listener to button- on the click it will reverse the string
+
+
+ var button = document.getElementById('reverse-string-button');
+ button.addEventListener('click', reverseString);
+
+
+
+
 </script>
 
 
@@ -245,6 +255,7 @@
 <script>
   "use strict";
   // code here for above problem
+
 </script>
 
 <div class="hint">
