@@ -327,7 +327,6 @@ function reverseString() {
 
 <script>
   "use strict";
-  // put your code here
 
   $('#make-a-porcupine').click(function () {
     $('#cute-porcupine-image').delay(1000).slideDown(8000);
@@ -371,7 +370,7 @@ function reverseString() {
     What's your favorite food?
     <input type="text" name="favorite-food" required
            id="favorite-food-input">
-    <input type="submit" value="I'm Very Agreeable">
+    <input type="submit" id="submit-button" value="I'm Very Agreeable">
   </form>
   <div id="agreeable-text"></div>
 </fieldset>
@@ -379,6 +378,14 @@ function reverseString() {
 <script>
   "use strict";
   // put your code here
+  function showThatIAgree(evt){
+    evt.preventDefault();
+    var userFavFood = $('#favorite-food-input').val() ;
+    $('#agreeable-text').html('I like ' + userFavFood + ', too!');
+  }
+
+  $('#agreeable-form').submit(showThatIAgree);
+
 </script>
 
 <div class="hint">
@@ -409,6 +416,36 @@ function reverseString() {
 <script>
   "use strict";
   // put your code here
+
+
+  function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+  var secretNumber = getRandomInt(1,100);
+
+  $('#play-guessing-game').click(function() {
+    var userGuess = parseInt(prompt("I'm thinking of a number- what do you think it is?"));
+    while (true){
+      if (userGuess > secretNumber) {
+        userGuess = parseInt(prompt("Too high! Guess again:"));
+      }
+      else if (userGuess < secretNumber) {
+        userGuess = parseInt(prompt("Too low! Guess again:"));
+      }
+      else if (userGuess == secretNumber) {
+        alert('YAY! You guessed it!!');
+        break;
+      }
+      else {
+        alert('Aw man... bye! :(');
+          break;
+      }
+      }
+    });
+
+
+
 </script>
 
 <div class="hint">
@@ -449,7 +486,19 @@ function reverseString() {
 
 <script>
   "use strict";
-  // put your code here
+
+  $('#play-guessing-game-2').click(function() {
+    var userGuess2 = $('#number-guessing-msg').text("I'm thinking of a number- what do you think it is? Also- I'm not finished with this part!");
+  //   while (true){
+  //     if (userGuess2 > secretNumber) {
+  //       userGuess2 = $('#number-guessing-msg').text("Too high! Guess again:");
+  //   }
+  //     else {
+  //       break;
+  //     }
+  });
+
+
 </script>
 
 
